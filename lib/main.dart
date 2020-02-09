@@ -6,6 +6,7 @@ import 'package:b2b_app/Pages/home_page.dart';
 import 'package:b2b_app/Pages/loading_page.dart';
 import 'package:b2b_app/Pages/login_page.dart';
 import 'package:b2b_app/Pages/notification_page.dart';
+import 'package:b2b_app/Pages/cart_page.dart';
 import 'package:b2b_app/Pages/profile_page.dart';
 import 'package:b2b_app/Pages/shortlist_page.dart';
 import 'package:b2b_app/Shared/app_style.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
           '/home': (context) => HomePage(),
           '/login': (context) => LoginPage(),
           '/notif': (context) => NotifPage(),
+          '/cart':(context)=>CartPage(),
           '/scaffold': (context) => MyAppScaffold(),
           '/loading': (context) => LoadingPage(),
           '/wishlist': (context) => WishPage(),
@@ -135,7 +137,9 @@ class _MyAppScaffoldState extends State<MyAppScaffold> {
                   Navigator.pushNamed(context, '/notif');
                 },
                 icon: Icon(Icons.notifications)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.add_shopping_cart)),
+            IconButton(onPressed: () {
+              Navigator.pushNamed(context,'/cart');
+            }, icon: Icon(Icons.add_shopping_cart)),
           ],
           title: Text('B2B'),
         ),
